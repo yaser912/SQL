@@ -1,0 +1,109 @@
+/* --------------------------------------------------------------- */
+/* enter roles */
+INSERT INTO role (name)
+VALUES ('Admin'), ('Receptionist'), ('pharmacist'), ('cashier'), ('doctor'), ('nurse'), ('security'),
+('regular employee'),('HR manager'),('legal');
+/* --------------------------------------------------------------- */
+/* enter facilities type*/
+INSERT INTO facility_type (name) VALUES ('Hospital'),('Clinic'),('Pharmacy'),('Special
+Installment'),('CLSC'),('Research Facility'),('Distributor'),('dentist'),('eye doctor'),('psychiatrist');
+/* --------------------------------------------------------------- */
+/* enter diseases*/
+INSERT INTO disease (name)VALUES
+("COVID-19"),("SARS-Cov-2"),("Delta Variant"),("Alpha Variant"),("Beta Variant"), ("Common
+cold"),("Chicken pox"),("Malaria"),("Migraine"),("UTI");
+/* --------------------------------------------------------------- */
+/* enter facilities address*/
+INSERT INTO facility_address (facility_address, city, province, postal_code) VALUES ('123
+Street', 'town1', 'Province1', 'ABC DEF'),
+('456 Street', 'town2', 'Province2', 'GHI JKL'),
+('789 Street', 'town3', 'Province3', 'MNO PQR'),
+('101112 Street', 'town4', 'Province4', 'STU VWX'),
+('131415 Street', 'town5', 'Province5', 'XYZ 123'),
+('434 Street', 'town4', 'Province1', 'FWC DEF'),
+('645 Street', 'town5', 'Province2', 'KWI FWL'),
+('756 Street', 'town2', 'Province3', 'GNO QSR'),
+('675 Street', 'town7', 'Province4', 'WEU FEX'),
+('567 Street', 'town8', 'Province5', 'FEW FWE');
+/* --------------------------------------------------------------- */
+/* enter facilities */
+INSERT INTO facility (facility_type_id, facility_address_id, name, phone_number, website_url,
+capacity) VALUES (1, 1, 'Johns Hospital', 1234567890, 'www.johnhospital.com', 1000),
+(2, 2, 'Green Clinic', 1234567890, 'www.greenclinic.com', 1200),
+(3, 3, 'Bio Pharmacy', 1234567890, 'www.biophar.com', 200),
+(4, 4, 'craigs special installment', 1234567890, 'www.craigsSI.com', 800),
+(5, 5, 'THE CLSC', 1234567890, 'www.THEclsc.com', 50),
+(6, 6, 'MARTINSK research', 1234567890, 'www.mskRESEARCH.com', 10000),
+(7, 7, 'Damien & co distributor', 1432567890, 'www.DCdistributor.com', 1200),
+(8, 8, 'fun dentist ', 1242567890, 'www.funDentist.com', 20),
+(9, 9, ' eye GUY', 1654567890, 'www.EyeGUY.com', 8),
+(10, 10, 'Psych help',1878567890, 'www.PHelp.com', 5);
+/* --------------------------------------------------------------- */
+/* enter Vaccines*/
+INSERT INTO vaccine_type (name) VALUES ("Pfizer"),("Moderna"),("AstraZeneca"),("Johnson
+& Johnson"),("Covifenz"),
+("Rabies Vaccine"),("Chicken pox vaccine"),("flu shot"),("saline shot dummy vaccine"),("Tetanus
+vaccine");
+/* --------------------------------------------------------------- */
+/* enter employee addresses*/
+INSERT INTO employee_address (employee_address, city, province, postal_code) VALUES
+('1 employee add', 'montreal', 'Province1', 'ABC DEF'),
+('2 employee add', 'GTA', 'Province1', 'AQC DGS'),
+('3 employee add', 'Phil', 'Province1', 'SDF ASD'),
+('4 employee add', 'ottawa', 'Province4', 'ASD HJJ'),
+('5 employee add', 'vancover', 'Province3', 'YHJ HFH'),
+('6 employee add', 'montreal', 'Province1', 'ABC DEF'),
+('7 employee add', 'GTA', 'Province1', 'AQC DGS'),
+('8 employee add', 'Phil', 'Province1', 'SDF ASD'),
+('9 employee add', 'ottawa', 'Province4', 'ASD HJJ'),
+('10 employee add', 'vancover', 'Province3', 'YHJ HFH');
+/* --------------------------------------------------------------- */
+/* enter employees*/
+INSERT INTO employee (employee_address_id, first_name, last_name, date_of_birth,
+phone_number, email) VALUES
+(1, 'emp', 'one', '2000-01-01', 1234567890, 'emp.one@email.com'),
+(2, 'emp', 'two', '2001-05-03', 2347242901, 'emp.two@email.com'),
+(3, 'emp', 'three','2000-01-03', 5645689012, 'emp.three@email.com'),
+(4, 'emp', 'four', '2010-07-05', 4546590123, 'emp.four@email.com'),
+(5, 'emp', 'five', '2005-01-10', 7567901234, 'emp.five@email.com'),
+(6, 'emp',’six’, '2000-01-01', 1234567890, 'emp.six@email.com'),
+(7, 'emp', 'seven', '2001-05-03', 2347242901, 'emp.seven@email.com'),
+(8, 'emp', 'eight','2000-01-03', 5645689012, 'emp.eigh'@email.com'),
+(9, 'emp', 'nine', '2010-07-05', 4546590123, 'emp.nine@email.com'),
+(10, 'emp', 'ten', '2005-01-10', 7567901234, 'emp.ten@email.com');
+/* --------------------------------------------------------------- */
+/* enter employee - facility work relationship*/
+INSERT INTO work (employee_medicare_number, role_id, facility_id, start_date, end_date)
+VALUES
+(1, 1, 1, '2020-01-01', '2022-01-10'),
+(2, 2, 1, '2022-01-01', null),
+(3, 3, 1, '2022-01-01', null),
+(4, 4, 1, '2022-01-01', '2022-06-01'),
+(5, 5, 1, '2022-01-01', null),
+(6, 1, 2, '202`-01-01', '202`-01-10'),
+(7, 2, 2, '2020-01-01', null),
+(8, 3, 2, '2020-01-01', null),
+(9, 1, 3, '2021-01-01', '2022-06-01'),
+(10, 2, 3, '2018-01-01', null);
+/* --------------------------------------------------------------- */
+/* enter contracted diseases*/
+INSERT INTO contracted (employee_id, disease_id, date) VALUES
+(1,1,"2020-01-19"),
+(2,3,"2020-01-20"),
+(2,1,"2020-01-21"),
+(2,2,"2020-01-21"),
+(1,4,"2020-01-23"),
+(5,2,"2020-01-24"),
+(1,1,"2022-12-12"),
+(1,1,"2022-12-22"),
+(6,1,"2021-12-01"),
+(5,2,"2022-01-10");
+/* --------------------------------------------------------------- */
+/* enter patient vaccine taken*/
+INSERT INTO patient_vaccine (employee_id, vaccine_type_id, date, location,
+dose_number)VALUES
+(1,1,'2021-05-03','Montreal', 1),
+(2,3,'2021-04-03','Vancover', 1),
+(3,1,'2021-03-03','Montreal', 1),
+(4,2,'2021-05-03','Toronto', 1),
+(6,1,'2021-08-03','montreal', 1), (7,2,'2021-01-03','montreal', 1), (1,1,'2021-08-03', 'montreal',2), (2,3,'2021-08-03', 'montreal',2), (4,2,'2021-08-03','Toronto', 2), (6,1,'2021-12-03','montreal', 2);
